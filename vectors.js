@@ -5,6 +5,7 @@
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+
 // Vector addition for any number of vectors of any dimension
 function addVectors() {
     let vector = [];
@@ -19,6 +20,7 @@ function addVectors() {
     }
     return vector;
 }
+
 
 // Vector subtraction for any number of vectors of any dimension
 function subVectors() {
@@ -35,6 +37,7 @@ function subVectors() {
     return vector;
 }
 
+
 // Scalar dot-product for two vectors of any dimension
 function dotVectors(vec1, vec2) {
     let dot = 0;
@@ -43,6 +46,7 @@ function dotVectors(vec1, vec2) {
     }
     return dot;
 }
+
 
 // Vector cross-product two 3-dimensional vectors
 function crossVectors(vec1, vec2) {
@@ -55,6 +59,8 @@ function crossVectors(vec1, vec2) {
     return vector;
 }
 
+
+// Returns pythagorean length of n-dimensional vector
 function getMagnitude(vec) {
     let magnitude = 0;
     for (var elem of vec) {
@@ -64,4 +70,13 @@ function getMagnitude(vec) {
     return magnitude;
 }
 
-export {addVectors, subVectors, dotVectors, crossVectors, getMagnitude};
+
+// Normalizes vector to unit length
+function normalize(vec) {
+    let vector = [];
+    let magnitude = getMagnitude(vec);
+    for (var elem of vec) {
+        vector.push(elem / magnitude);
+    }
+    return vector;
+}
